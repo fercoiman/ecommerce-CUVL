@@ -1,0 +1,78 @@
+.carrito {
+    padding: 20px;
+}
+
+.carrito h1, .carrito h2 {
+    text-align: center;
+}
+
+.carrito .carrito__borrar__pedir {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+
+    margin: 15px auto;
+    display: block;
+
+    cursor: pointer;
+}
+
+.carrito .carrito_borrar {
+    background-color: crimson;
+    color: white;
+}
+
+.carrito .carrito_pedir {
+    background-color: green;
+    color: white;
+}
+
+/* -------------------------------- */
+/*      Maquetado de la tabla       */
+/* -------------------------------- */
+.carrito th, .carrito td {
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    padding: 20px;
+}
+
+.carrito th {
+    text-transform: uppercase;
+    background-color: #111;
+    color: white;
+}
+
+.carrito table {
+    border-collapse: collapse;
+    margin: 5px auto;
+}
+
+.carrito .centrar {
+    text-align: center;
+}
+
+/* ------------------------------ */
+.carrito table button.btnBorrar {
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+
+    background-color: orangered;
+    color: white;
+}
+
+.carrito .btnIncDec {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: blue;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}

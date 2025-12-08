@@ -1,0 +1,20 @@
+.ObtenerFoto input {
+    display: none;
+}
+
+.ObtenerFoto #drop {
+    border: 3px dashed blue;
+    width: 400px;
+    height: 200px;
+    margin: 10px auto;
+    background-color: lightyellow;
+    padding: 10px;
+}
+
+.ObtenerFoto label {
+    color: red;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
