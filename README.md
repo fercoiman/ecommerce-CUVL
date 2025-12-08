@@ -1,2 +1,2 @@
 # ecommerce-CUVL
-ecommerce-CUV
+ecommerce-CUVL
