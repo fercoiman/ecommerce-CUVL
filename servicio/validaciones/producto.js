@@ -2,13 +2,13 @@ import Joi from "joi";
 
 export const validar = (producto) => {
   const productoSchema = Joi.object({
-    nombre: Joi.string().alphanum().min(3).max(20).required(),
-    precio: Joi.number().min(0).max(1000000).required(),
-    stock: Joi.number().integer().min(0).max(999).required(),
+    nombre: Joi.string().alphanum().min(1).max(80).required(),
+    precio: Joi.number().min(0).max(10000000).required(),
+    stock: Joi.number().integer().min(0).max(9999).required(),
     marca: Joi.string().required(),
     categoria: Joi.string().required(),
-    detalles: Joi.string().required(),
-    foto: Joi.string().required(),
+    detalles: Joi.string(),
+    foto: Joi.string(),
     envio: Joi.boolean().required(),
   });
 
