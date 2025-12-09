@@ -1,14 +1,14 @@
 import Server from "./server.js";
 
-import config from './config.js'
-import CnxMongoDB from "./model/DBMongo.js";
+import config from "./config.js";
+import ConnectMongoDB from "./model/DBMongo.js";
 
-if(
-    config.MODO_PERSISTENCIA_PRODUCTOS == 'MONGODB' ||
-    config.MODO_PERSISTENCIA_PEDIDOS == 'MONGODB'
+if (
+  config.MODO_PERSISTENCIA_PRODUCTOS == "MONGODB" ||
+  config.MODO_PERSISTENCIA_PEDIDOS == "MONGODB"
 ) {
-    await CnxMongoDB.conectar()
+  await ConnectMongoDB.conectar();
 }
 
-const server = new Server(config.PORT)
-server.start()
+const server = new Server(config.PORT);
+server.start();

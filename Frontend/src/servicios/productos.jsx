@@ -4,10 +4,7 @@ console.error("MODO:", import.meta.env.MODE);
 
 export const production = import.meta.env.MODE == "production";
 
-//const url = 'http://localhost:8080/api/productos/'      // para ambiente de desarrollo
-//const url = '/api/productos/'                             // para ambiente de producción
-
-//const url = production? '/api/productos/' : 'http://localhost:8080/api/productos/'
+const url = production ? '/api/productos/' : 'http://localhost:8080/api/productos/'
 
 export const proxyProducto = (producto) => {
   const handler = {

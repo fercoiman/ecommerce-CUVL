@@ -1,22 +1,27 @@
-import CnxMongoDB from "../../DBMongo.js"
+import ConnectMongoDB from "../../DBMongo.js";
 
 class ModelMongoDB {
-    constructor() {}
+  constructor() {}
 
-    obtenerPedidos = async () => {
-        if(!CnxMongoDB.connectionOK) throw new Error('ERROR CNX BASE DE DATOS') 
+  obtenerPedidos = async () => {
+    if (!ConnectMongoDB.connectionOK)
+      throw new Error("ERROR CONEXION CON BASE DE DATOS");
 
-        const pedidos = await CnxMongoDB.db.collection('pedidos').find({}).toArray()
-        //console.log(pedidos)
-        return pedidos
-    }
+    const pedidos = await ConnectMongoDB.db
+      .collection("pedidos")
+      .find({})
+      .toArray();
+    //console.log(pedidos)
+    return pedidos;
+  };
 
-    guardarPedido = async pedido => {
-        if(!CnxMongoDB.connectionOK) throw new Error('ERROR CNX BASE DE DATOS') 
-        
-        await CnxMongoDB.db.collection('pedidos').insertOne(pedido)
-        return pedido
-    }
+  guardarPedido = async (pedido) => {
+    if (!ConnectMongoDB.connectionOK)
+      throw new Error("ERROR CONEXION CON BASE DE DATOS");
+
+    await ConnectMongoDB.db.collection("pedidos").insertOne(pedido);
+    return pedido;
+  };
 }
 
-export default ModelMongoDB
+export default ModelMongoDB;

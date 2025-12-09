@@ -1,22 +1,21 @@
-import express from 'express'
+import express from "express";
 
-import Controlador from '../controlador/pedidos.js'
-
+import Controlador from "../controlador/pedidos.js";
 
 class Router {
-    #controlador = null
-    constructor() {
-        this.#controlador = new Controlador()
-    }
+  #controlador = null;
+  constructor() {
+    this.#controlador = new Controlador();
+  }
 
-    config() {
-        const router = express.Router()
+  config() {
+    const router = express.Router();
 
-        router.get('/',this.#controlador.obtenerPedidos)
-        router.post('/', this.#controlador.guardarPedido)
+    router.get("/", this.#controlador.obtenerPedidos);
+    router.post("/", this.#controlador.guardarPedido);
 
-        return router
-    }
+    return router;
+  }
 }
 
-export default Router
+export default Router;
