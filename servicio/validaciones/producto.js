@@ -1,7 +1,3 @@
-//https://www.npmjs.com/package/joi
-//https://joi.dev/
-//https://joi.dev/api/?v=17.13.3
-
 import Joi from "joi";
 
 export const validar = (producto) => {

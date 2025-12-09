@@ -7,7 +7,7 @@ class ModelFile {
     this.#nombreArchivo = "pedidos.json";
   }
 
-  // --------------- Funciones para acceder al sistema de archivo (read/write) -------------
+  
   #leerArchivo = async (nombre) => {
     let pedidos = [];
     try {
@@ -20,7 +20,7 @@ class ModelFile {
   #escribirArchivo = async (nombre, pedidos) => {
     await fs.promises.writeFile(nombre, JSON.stringify(pedidos, null, "\t"));
   };
-  // ---------------------------------------------------------------------------------------
+  
 
   obtenerPedidos = async () => {
     const pedidos = await this.#leerArchivo(this.#nombreArchivo);
@@ -29,7 +29,7 @@ class ModelFile {
 
   guardarPedido = async (pedido) => {
     const pedidos = await this.#leerArchivo(this.#nombreArchivo);
-    pedido.id = String((parseInt(pedidos[pedidos.length - 1]?.id) || 0) + 1); // ?. optional chaining con || short circuit operator
+    pedido.id = String((parseInt(pedidos[pedidos.length - 1]?.id) || 0) + 1); 
     pedidos.push(pedido);
     await this.#escribirArchivo(this.#nombreArchivo, pedidos);
 

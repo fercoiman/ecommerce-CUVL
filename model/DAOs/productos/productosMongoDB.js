@@ -12,7 +12,6 @@ class ModelMongoDB {
       .collection("productos")
       .find({})
       .toArray();
-    //console.log(productos)
     return productos;
   };
 
@@ -20,11 +19,9 @@ class ModelMongoDB {
     if (!ConnectMongoDB.connectionOK)
       throw new Error("ERROR CNX BASE DE DATOS");
 
-    //const producto = await ConnectMongoDB.db.collection('productos').findOne({_id: new ObjectId(id)})
     const producto = await ConnectMongoDB.db
       .collection("productos")
       .findOne({ _id: ObjectId.createFromHexString(id) });
-    //console.log(producto)
     return producto;
   };
 
@@ -44,7 +41,6 @@ class ModelMongoDB {
       .collection("productos")
       .updateOne({ _id: ObjectId.createFromHexString(id) }, { $set: producto });
     const productoActualizado = await this.obtenerProducto(id);
-    //console.log(productoActualizado)
     return productoActualizado;
   };
 
@@ -56,7 +52,6 @@ class ModelMongoDB {
     await ConnectMongoDB.db
       .collection("productos")
       .deleteOne({ _id: ObjectId.createFromHexString(id) });
-    //console.log(productoEliminado)
     return productoEliminado;
   };
 }

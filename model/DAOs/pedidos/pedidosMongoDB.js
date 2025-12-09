@@ -11,7 +11,6 @@ class ModelMongoDB {
       .collection("pedidos")
       .find({})
       .toArray();
-    //console.log(pedidos)
     return pedidos;
   };
 
